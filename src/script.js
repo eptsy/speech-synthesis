@@ -4,8 +4,15 @@ const voicesDropdown = document.querySelector('[name="voice"]');
 const options = document.querySelectorAll('[type="range"], [type="text"]');
 const speakButton = document.querySelector("#speak");
 const stopButton = document.querySelector("#stop");
+const text = document.querySelector("#hello");
 
 msg.text = document.querySelector('[name="text"]').value;
+
+function textarea(e) {
+  msg.text = document.querySelector('[name="text"]').value;
+}
+
+text.addEventListener("onchange", textarea);
 
 function populateVoices() {
   voices = this.getVoices();
